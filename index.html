@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#c5b58e"><title>Ink Drop Dialer</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main id="app" aria-label="Ink Drop Dialer interactive experience">
+  <div id="hiddenScene" aria-hidden="true"></div>
+  <section id="dialInterface" aria-label="Hidden dial pad">
+    <div id="numberPanel"><span class="eyebrow">INK DROP DIALER</span><div id="numberDisplay" aria-live="polite">· · ·</div><div id="dialHint">Tilt to discover the numbers</div></div>
+    <div id="keypad" aria-hidden="true">
+      <div class="key" data-key="1">1</div><div class="key" data-key="2">2</div><div class="key" data-key="3">3</div>
+      <div class="key" data-key="4">4</div><div class="key" data-key="5">5</div><div class="key" data-key="6">6</div>
+      <div class="key" data-key="7">7</div><div class="key" data-key="8">8</div><div class="key" data-key="9">9</div>
+      <div class="key" data-key="*">✳</div><div class="key" data-key="0">0</div><div class="key" data-key="#">#</div>
+    </div>
+    <div id="actions"><div class="actionKey" data-key="delete" aria-label="Delete digit"><svg viewBox="0 0 24 24"><path d="M9 4H21V20H9L2 12Z M12 9L18 15M18 9L12 15"/></svg></div><div class="actionKey callKey" data-key="call" aria-label="Simulated call"><svg viewBox="0 0 24 24"><path d="M6.6 2.9l3.1 3.1-2.1 3c1.5 3 3.6 5.1 6.6 6.6l3-2.1 3.1 3.1-1.3 4c-.3.8-1.2 1.2-2 1-8-2-13.3-7.3-15.3-15.3-.2-.8.2-1.7 1-2z"/></svg></div></div>
+  </section>
+  <canvas id="inkCanvas" aria-hidden="true"></canvas>
+  <div id="drop" aria-hidden="true"><div class="drop-shine"></div><svg class="progress" viewBox="0 0 100 100"><circle class="progress-track" cx="50" cy="50" r="46"/><circle id="progressArc" cx="50" cy="50" r="46"/></svg></div>
+  <div id="status" role="status" aria-live="polite"></div>
+  <div id="callScreen" class="hidden"><div class="call-eyebrow">INK DROP DIALER</div><div class="avatar">◌</div><div id="callingNumber"></div><div id="callState">Calling… · Simulation only</div><div class="callControls"><div class="decorative">◌<small>Mute</small></div><div class="decorative">◖))<small>Speaker</small></div><div id="endCall" class="endControl" data-key="end">✕<small>End</small></div></div><div class="callInstruction">Tilt the phone to the red circle and hold for 3 seconds to end</div></div>
+  <div id="intro" class="overlay"><div class="introCard"><div class="eyebrow">AN ALTERNATIVE PHONE INTERFACE</div><h1>Ink Drop<br>Dialer</h1><p>Reveal what is hidden beneath the ink.</p><div class="instructions"><span>01 · Tilt your phone to move the glass drop</span><span>02 · Reveal numbers beneath the painting</span><span>03 · Hover over a key for 3 seconds</span></div><button id="startBtn">Begin Experience</button><p class="footnote" id="deviceNote">Sensor permission may be requested. No real calls are made.</p></div></div>
+  <button id="recenter" title="Recalibrate tilt" aria-label="Recalibrate tilt">◎</button>
+</main>
+<script src="js/script.js"></script>
+</body>
+</html>
